@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+h2 {
+  color: black;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: black;
+}
+
+input {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: orange;
+}
+
+</style>
+</head>
+<body>
+  <form (ngSubmit)="confirmarEnvio($event)" class="container">
+    <h2>Campos del Formulario</h2>
+  
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" required (input)="validarCampos()">
+    </div>
+  
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" required (input)="validarCampos()">
+    </div>
+  
+    <div class="button-group">
+      <button type="submit" [disabled]="!camposValidos">Enviar</button>
+      <button type="button" (click)="abrirNuevaVentana()">Ver Campos</button>
+    </div>
+  </form>
+  
+</body>
+</html>
+
+

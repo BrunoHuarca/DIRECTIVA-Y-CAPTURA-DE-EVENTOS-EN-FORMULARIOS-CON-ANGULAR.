@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'mi-app';
+  onSubmit() {
+    console.log('El formulario fue enviado');
+  }
+
 }
